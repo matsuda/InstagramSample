@@ -37,5 +37,37 @@ enum Constants {
         static var AuthURL: String {
             return String(format: _AuthURL, _ClientId, RedirectUri, _AuthResponseType)
         }
+
+        static let BaseURL = "https://api.instagram.com/v1"
+
+        enum Endpoint {
+            case selfRecent
+
+            var path: String {
+                switch self {
+                case .selfRecent:
+                    return "/users/self/media/recent/"
+                }
+            }
+        }
+
+        static func buildURL(
+            endpoint: Constants.Instagram.Endpoint,
+            parameters: [String: Any]? = nil
+            ) -> URL
+        {
+            let baseURL = Constants.Instagram.BaseURL.appending(endpoint.path)
+            var comps = URLComponents(string: baseURL)!
+            if let parameters = parameters, !parameters.isEmpty {
+                var items: [URLQueryItem] = []
+                parameters.forEach { (key, value) in
+                    items.append(URLQueryItem(name: key, value: "\(value)"))
+                }
+                comps.queryItems = items
+            }
+            return comps.url!
+        }
     }
 }
+
+typealias Instagram = Constants.Instagram

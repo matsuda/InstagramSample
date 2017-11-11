@@ -44,6 +44,25 @@ final class RootViewController: UIViewController {
     }
 
     func request() {
+        guard let token = accessToken else {
+            return
+        }
+
+        let mediaURL = Instagram.buildURL(endpoint: .selfRecent, parameters: ["access_token": token])
+        print("URL >>>", mediaURL)
+
+        let task = URLSession.shared.dataTask(with: mediaURL) { (data, response, error) in
+            guard let data = data else { return }
+            let text = String(data: data, encoding: .utf8)
+            print(text ?? "")
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
+                print(json)
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
     }
 }
 
