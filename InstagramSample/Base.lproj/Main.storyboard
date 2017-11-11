@@ -1,24 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FMX-CP-z8w">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="InstagramSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-iI-lB1">
+                                <rect key="frame" x="171" y="391" width="32" height="30"/>
+                                <state key="normal" title="Auth"/>
+                                <connections>
+                                    <segue destination="Wmv-QQ-dPJ" kind="presentation" identifier="ShowAuth" id="WL6-6R-8dZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gh2-iI-lB1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lxz-UQ-FWT"/>
+                            <constraint firstItem="Gh2-iI-lB1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pZ2-1s-z5H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VoV-3z-2w1"/>
+                    <connections>
+                        <segue destination="Wmv-QQ-dPJ" kind="presentation" identifier="ShowAuth" id="M4v-gZ-P6u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xur-4O-7Ai">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FMX-CP-z8w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O6P-Cb-Hlj">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rPY-AH-bcb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7r1-mD-ok2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-425" y="118"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="VNt-is-Z0q">
+            <objects>
+                <viewController id="ufT-z2-cGF" customClass="AuthViewController" customModule="InstagramSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aai-BS-FZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6T4-hl-Hgj">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6T4-hl-Hgj" firstAttribute="leading" secondItem="GeJ-JI-2iT" secondAttribute="leading" id="29i-ff-01d"/>
+                            <constraint firstItem="GeJ-JI-2iT" firstAttribute="bottom" secondItem="6T4-hl-Hgj" secondAttribute="bottom" id="Gzy-eD-qe1"/>
+                            <constraint firstItem="6T4-hl-Hgj" firstAttribute="top" secondItem="GeJ-JI-2iT" secondAttribute="top" id="YgQ-vQ-jns"/>
+                            <constraint firstItem="GeJ-JI-2iT" firstAttribute="trailing" secondItem="6T4-hl-Hgj" secondAttribute="trailing" id="d38-mX-nyG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GeJ-JI-2iT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tFv-6s-jYK">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="gVm-Z8-GHe">
+                            <connections>
+                                <action selector="didTapCancel:" destination="ufT-z2-cGF" id="iMA-yn-gjf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="6T4-hl-Hgj" id="Q6A-mP-ipr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJZ-5Z-5o2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="941"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RQj-Ny-NYq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wmv-QQ-dPJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eDH-U3-KpZ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ufT-z2-cGF" kind="relationship" relationship="rootViewController" id="7OS-FY-xtg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PvG-ey-kDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="941"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WL6-6R-8dZ"/>
+    </inferredMetricsTieBreakers>
 </document>
