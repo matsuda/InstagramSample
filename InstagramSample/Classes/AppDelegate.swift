@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            {
+                if let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+                    print("Documents directory : \n\(docDir)\n")
+                }
+            }()
+        #endif
         return true
     }
 
