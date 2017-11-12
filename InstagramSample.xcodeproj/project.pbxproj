@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8E27AE1FB82448006616EF /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E27AD1FB82448006616EF /* KeychainAccess.framework */; };
 		0EF1EA361FB7443700159B84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA341FB7443700159B84 /* Main.storyboard */; };
 		0EF1EA381FB7443700159B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA371FB7443700159B84 /* Assets.xcassets */; };
 		0EF1EA3B1FB7443700159B84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA391FB7443700159B84 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E8E27AD1FB82448006616EF /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		0EF1EA2D1FB7443700159B84 /* InstagramSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1EA351FB7443700159B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EF1EA371FB7443700159B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,17 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8E27AE1FB82448006616EF /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8E27AC1FB82447006616EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E27AD1FB82448006616EF /* KeychainAccess.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0EF1EA241FB7443700159B84 = {
 			isa = PBXGroup;
 			children = (
 				0EF1EA2F1FB7443700159B84 /* InstagramSample */,
 				0EF1EA2E1FB7443700159B84 /* Products */,
+				0E8E27AC1FB82447006616EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +100,7 @@
 				0EF1EA291FB7443700159B84 /* Sources */,
 				0EF1EA2A1FB7443700159B84 /* Frameworks */,
 				0EF1EA2B1FB7443700159B84 /* Resources */,
+				0E8E27AF1FB82451006616EF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -144,6 +157,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E8E27AF1FB82451006616EF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EF1EA291FB7443700159B84 /* Sources */ = {
@@ -291,6 +321,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = InstagramSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.matsuda.InstagramSample;
@@ -305,6 +339,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = InstagramSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.matsuda.InstagramSample;
