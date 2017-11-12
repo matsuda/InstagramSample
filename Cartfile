@@ -1,1 +1,3 @@
 github "kishikawakatsumi/KeychainAccess"
+github "Alamofire/Alamofire" ~> 4.5
+github "onevcat/Kingfisher" ~> 4.0

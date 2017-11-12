@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E8E27AE1FB82448006616EF /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E27AD1FB82448006616EF /* KeychainAccess.framework */; };
 		0E8E27B11FB82602006616EF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E27B01FB82602006616EF /* Store.swift */; };
+		0E8E27B61FB83B80006616EF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E27B41FB83B80006616EF /* Kingfisher.framework */; };
+		0E8E27B71FB83B80006616EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E27B51FB83B80006616EF /* Alamofire.framework */; };
 		0EF1EA361FB7443700159B84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA341FB7443700159B84 /* Main.storyboard */; };
 		0EF1EA381FB7443700159B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA371FB7443700159B84 /* Assets.xcassets */; };
 		0EF1EA3B1FB7443700159B84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA391FB7443700159B84 /* LaunchScreen.storyboard */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		0E8E27AD1FB82448006616EF /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		0E8E27B01FB82602006616EF /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		0E8E27B41FB83B80006616EF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		0E8E27B51FB83B80006616EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0EF1EA2D1FB7443700159B84 /* InstagramSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1EA351FB7443700159B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EF1EA371FB7443700159B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,7 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8E27B71FB83B80006616EF /* Alamofire.framework in Frameworks */,
 				0E8E27AE1FB82448006616EF /* KeychainAccess.framework in Frameworks */,
+				0E8E27B61FB83B80006616EF /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +53,8 @@
 		0E8E27AC1FB82447006616EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E8E27B51FB83B80006616EF /* Alamofire.framework */,
+				0E8E27B41FB83B80006616EF /* Kingfisher.framework */,
 				0E8E27AD1FB82448006616EF /* KeychainAccess.framework */,
 			);
 			name = Frameworks;
@@ -176,7 +184,9 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 			);
