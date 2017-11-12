@@ -14,9 +14,7 @@ enum Constants {
 
         /// set CLIENT_ID with `InstagramClientId` as the key to Info.plist
         private static var _ClientId: String = {
-            if let info = Bundle.main.infoDictionary,
-                let value = info["InstagramClientId"] as? String
-            {
+            if let value = Bundle.main.infoDictionary?["InstagramClientId"] as? String {
                 return value
             }
             fatalError("Missing InstagramClientId")
@@ -24,9 +22,7 @@ enum Constants {
 
         /// set REDIRECT_URI with `InstagramRedirectUri` as the key to Info.plist
         static var RedirectUri: String = {
-            if let info = Bundle.main.infoDictionary,
-                let value = info["InstagramRedirectUri"] as? String
-            {
+            if let value = Bundle.main.infoDictionary?["InstagramRedirectUri"] as? String {
                 return value
             }
             fatalError("Missing InstagramRedirectUri")
