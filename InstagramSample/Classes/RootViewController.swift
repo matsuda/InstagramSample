@@ -12,6 +12,7 @@ final class RootViewController: UIViewController {
 
     var viewAppearFirst = true
     lazy var accessToken: String? = Store.shared.accessToken
+    var dataSource: InstagramResponse.UserRecent?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,8 @@ final class RootViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !shouldAuth() {
-            request()
+//            request()
+            requestLocally()
         }
         viewAppearFirst = false
     }
@@ -58,18 +60,36 @@ final class RootViewController: UIViewController {
         let mediaURL = Instagram.buildURL(endpoint: .selfRecent, parameters: ["access_token": token])
         print("URL >>>", mediaURL)
 
-        let task = URLSession.shared.dataTask(with: mediaURL) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: mediaURL) { [weak self] (data, response, error) in
             guard let data = data else { return }
-            let text = String(data: data, encoding: .utf8)
-            print(text ?? "")
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
-                print(json)
-            } catch {
-                print(error)
-            }
+            self?.resultDump(data: data)
+            self?.dataSource = try? JSONDecoder().decode(InstagramResponse.UserRecent.self, from: data)
         }
         task.resume()
+    }
+
+    func resultDump(data: Data) {
+        guard let text = String(data: data, encoding: .utf8) else {
+            return
+        }
+        print(text)
+        if let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first {
+            try? text.write(toFile: "\(path)/media_recent.json", atomically: true, encoding: .utf8)
+        }
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
+            print(json)
+        } catch {
+            print(error)
+        }
+    }
+
+    func requestLocally() {
+        guard let data = try? InstagramResponse.load(sample: .media_recent) else {
+            return
+        }
+        dataSource = try? JSONDecoder().decode(InstagramResponse.UserRecent.self, from: data)
+        print(dataSource ?? "")
     }
 }
 
