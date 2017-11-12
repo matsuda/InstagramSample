@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E8E27AE1FB82448006616EF /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E27AD1FB82448006616EF /* KeychainAccess.framework */; };
+		0E8E27B11FB82602006616EF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E27B01FB82602006616EF /* Store.swift */; };
 		0EF1EA361FB7443700159B84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA341FB7443700159B84 /* Main.storyboard */; };
 		0EF1EA381FB7443700159B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA371FB7443700159B84 /* Assets.xcassets */; };
 		0EF1EA3B1FB7443700159B84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA391FB7443700159B84 /* LaunchScreen.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		0E8E27AD1FB82448006616EF /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		0E8E27B01FB82602006616EF /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0EF1EA2D1FB7443700159B84 /* InstagramSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1EA351FB7443700159B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EF1EA371FB7443700159B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +50,16 @@
 				0E8E27AD1FB82448006616EF /* KeychainAccess.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0E8E27B31FB82FF2006616EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EF1EA481FB755FE00159B84 /* AuthViewController.swift */,
+				0EF1EA491FB755FE00159B84 /* RootViewController.swift */,
+				0EF1EA4A1FB755FE00159B84 /* AppDelegate.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		0EF1EA241FB7443700159B84 = {
@@ -83,9 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				0EF1EA471FB755FE00159B84 /* Constants.swift */,
-				0EF1EA481FB755FE00159B84 /* AuthViewController.swift */,
-				0EF1EA491FB755FE00159B84 /* RootViewController.swift */,
-				0EF1EA4A1FB755FE00159B84 /* AppDelegate.swift */,
+				0E8E27B01FB82602006616EF /* Store.swift */,
+				0E8E27B31FB82FF2006616EF /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8E27B11FB82602006616EF /* Store.swift in Sources */,
 				0EF1EA4E1FB755FE00159B84 /* AppDelegate.swift in Sources */,
 				0EF1EA4C1FB755FE00159B84 /* AuthViewController.swift in Sources */,
 				0EF1EA4B1FB755FE00159B84 /* Constants.swift in Sources */,

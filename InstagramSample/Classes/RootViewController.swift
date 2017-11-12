@@ -11,7 +11,7 @@ import UIKit
 final class RootViewController: UIViewController {
 
     var viewAppearFirst = true
-    var accessToken: String?
+    lazy var accessToken: String? = Store.shared.accessToken
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,15 @@ final class RootViewController: UIViewController {
         super.viewWillAppear(animated)
         if shouldAuth() {
             performSegue(withIdentifier: "ShowAuth", sender: self)
-            viewAppearFirst = false
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !shouldAuth() {
+            request()
+        }
+        viewAppearFirst = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +75,7 @@ final class RootViewController: UIViewController {
 
 extension RootViewController: AuthViewControllerDelegate {
     func authViewController(authViewController: AuthViewController, didAuthenticate token: String) {
+        Store.shared.accessToken = token
         accessToken = token
         authViewController.dismiss(animated: true) { [unowned self] in
             self.request()
