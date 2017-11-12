@@ -13,6 +13,7 @@
 		0E8E27B71FB83B80006616EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E27B51FB83B80006616EF /* Alamofire.framework */; };
 		0E8E27C01FB840B6006616EF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E27BF1FB840B6006616EF /* Response.swift */; };
 		0EC083561FB8A3F0004A3D1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0EC083551FB8A3F0004A3D1B /* README.md */; };
+		0E8E27C21FB845C9006616EF /* media_recent.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E27C11FB845C9006616EF /* media_recent.json */; };
 		0EF1EA361FB7443700159B84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA341FB7443700159B84 /* Main.storyboard */; };
 		0EF1EA381FB7443700159B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA371FB7443700159B84 /* Assets.xcassets */; };
 		0EF1EA3B1FB7443700159B84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1EA391FB7443700159B84 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 		0E8E27B51FB83B80006616EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0E8E27BF1FB840B6006616EF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		0EC083551FB8A3F0004A3D1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0E8E27C11FB845C9006616EF /* media_recent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = media_recent.json; sourceTree = "<group>"; };
 		0EF1EA2D1FB7443700159B84 /* InstagramSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1EA351FB7443700159B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EF1EA371FB7443700159B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		0E8E27B81FB83F39006616EF /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E27C11FB845C9006616EF /* media_recent.json */,
+			);
+			path = Development;
+			sourceTree = "<group>";
+		};
 		0E8E27BE1FB84067006616EF /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		0EF1EA2F1FB7443700159B84 /* InstagramSample */ = {
 			isa = PBXGroup;
 			children = (
+				0E8E27B81FB83F39006616EF /* Development */,
 				0EF1EA461FB755FE00159B84 /* Classes */,
 				0EF1EA341FB7443700159B84 /* Main.storyboard */,
 				0EF1EA371FB7443700159B84 /* Assets.xcassets */,
@@ -184,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF1EA3B1FB7443700159B84 /* LaunchScreen.storyboard in Resources */,
+				0E8E27C21FB845C9006616EF /* media_recent.json in Resources */,
 				0EF1EA381FB7443700159B84 /* Assets.xcassets in Resources */,
 				0EC083561FB8A3F0004A3D1B /* README.md in Resources */,
 				0EF1EA361FB7443700159B84 /* Main.storyboard in Resources */,
